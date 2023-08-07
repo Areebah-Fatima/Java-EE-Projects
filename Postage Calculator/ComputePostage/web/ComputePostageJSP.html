@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!-- After clicking the link in the index.html we reach the ComputePostageJSP.html
+
+    This form will allow users to input weight, length, height, weight, and zone factor.
+    When the submit button is clicked it will lead to a page that will display the calculator results -->
+
+<html>
+<head>
+<title>Compute Postage Payment</title>
+</head>
+<body>
+Postage Payment Calculator
+ 
+<form method="get" action="ComputePostageJSP.jsp">
+    
+<!-- Text input boxes -->
+<p>Length (Inches)
+    <input type="text" name="length"><br>
+Width (Inches)
+    <input type="text" name="width"><br>
+Height (Inches) 
+    <input type="text" name="height"><br>
+Weight (Pounds)
+    <input type="text" name="weight"><br>
+
+    <!--Zone (Should be a number from 1-4)
+    <input type="text" name="zone"></p>-->
+    
+<label for="zone">Zone (Should be a number from 1-4):</label>
+<input type="number" id="zone" name="zone" min="1" max="4">
+
+<!-- Submit and reset buttons -->
+<p><input type="submit" name="Submit" value="Compute Postage Payment">
+   <input type="reset" value="Reset"></p>
+</form>
+</body>
+</html>

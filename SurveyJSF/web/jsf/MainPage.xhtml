@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+     
+    <h:head>
+        <title>Survey Main Page</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            
+            <h:panelGrid columns="2">
+                
+                <h:outputLabel value="Date of visit (The format should be yyyy-MM-dd) " />
+                <h:inputText value="#{cDISurveyBean.survey.dateOfVisit}" >
+                <f:convertDateTime pattern="yyyy-MM-dd" timeZone="GMT-5" />  
+                </h:inputText>
+                
+                 
+                <h:commandButton value="Next" action="ValidatePage.xhtml"/>
+              
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

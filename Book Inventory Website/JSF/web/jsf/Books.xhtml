@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Books for a Author</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h3>Books By #{showAuthorBean.author.author}</h3>
+            <h:form>
+                <h:dataTable value="#{showAuthorBean.bookList}" var="book">
+                <h:column>
+                  <f:facet name="header">
+                    <h:outputText value="Title"/>
+                  </f:facet>
+                    <h:outputText value="#{book.title}"/>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">
+                    <h:outputText value="ISBN"/>
+                  </f:facet>
+                    <h:outputText value="#{book.isbn}"/>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">
+                    <h:outputText value="Pages"/>
+                  </f:facet>
+                    <h:outputText value="#{book.pages}"/>
+                </h:column>
+                </h:dataTable>
+                <h:commandButton value="Back to List"                                  
+                                 action="MainPage.xhtml"/>  
+                <h:commandButton value="Back to Author"                                  
+                                 action="#{showAuthorBean.backToAuthor()}"> 
+                    <f:param name="author" value="#{showAuthorBean.author.author}" />
+                </h:commandButton>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
